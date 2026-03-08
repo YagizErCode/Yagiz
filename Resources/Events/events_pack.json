@@ -1,0 +1,6690 @@
+{
+  "events": [
+    {
+      "id": "chain_0001",
+      "title": "The Prophet's Final Revelation",
+      "description": "Your prophet emerges from meditation with blazing eyes. 'I have seen the truth \u2014 our faith shall reshape the world, but only if we act NOW.'",
+      "choices": [
+        {
+          "text": "Proclaim a Great Crusade",
+          "effects": {
+            "authority": 15,
+            "militarism": 10,
+            "gold": -100
+          }
+        },
+        {
+          "text": "Proclaim an Age of Enlightenment",
+          "effects": {
+            "authority": 10,
+            "knowledge": 15,
+            "education_all": 5
+          }
+        },
+        {
+          "text": "Proclaim the Path of Humility",
+          "effects": {
+            "authority": 5,
+            "charity": 15,
+            "legitimacy": 10
+          }
+        }
+      ],
+      "conditions": {},
+      "weight": 0,
+      "cooldown": 3
+    },
+    {
+      "id": "chain_0002",
+      "title": "The Prophet's Trial",
+      "description": "Your prophet retreats into the wilderness for 40 days. Followers grow anxious. Some begin to doubt.",
+      "choices": [
+        {
+          "text": "Send disciples to watch over them",
+          "effects": {
+            "authority": 5,
+            "gold": -20
+          },
+          "next_event_id": "chain_0001"
+        },
+        {
+          "text": "Let them face the trial alone",
+          "effects": {
+            "authority": -5,
+            "legitimacy": 5
+          },
+          "next_event_id": "chain_0001"
+        }
+      ],
+      "conditions": {},
+      "weight": 0,
+      "cooldown": 3
+    },
+    {
+      "id": "evt_0003",
+      "title": "The Prophet's Vision",
+      "description": "Your spiritual leader claims to have received a divine vision during prayer. The faithful are stirred.",
+      "choices": [
+        {
+          "text": "Announce the vision publicly",
+          "effects": {
+            "authority": 10,
+            "spread_rate": 2
+          },
+          "next_event_id": "chain_0002"
+        },
+        {
+          "text": "Keep it secret among the inner circle",
+          "effects": {
+            "authority": 5,
+            "legitimacy": 5
+          },
+          "next_event_id": "chain_0002"
+        },
+        {
+          "text": "Dismiss it as a fever dream",
+          "effects": {
+            "authority": -10
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 5
+      },
+      "weight": 15,
+      "cooldown": 5
+    },
+    {
+      "id": "chain_0004",
+      "title": "The Scholar's Legacy",
+      "description": "The scholar's writings have spread far. They challenge core tenets but also attract intellectuals to your faith.",
+      "choices": [
+        {
+          "text": "Incorporate the teachings",
+          "effects": {
+            "knowledge": 10,
+            "tolerance": 10,
+            "heresy_all": 0.02
+          }
+        },
+        {
+          "text": "Burn the manuscripts",
+          "effects": {
+            "authority": 10,
+            "knowledge": -5,
+            "heresy_all": -0.03
+          }
+        }
+      ],
+      "conditions": {},
+      "weight": 0,
+      "cooldown": 3
+    },
+    {
+      "id": "chain_0005",
+      "title": "The Scholar's Debate",
+      "description": "The scholar challenges your high priest to a public theological debate. The crowd gathers.",
+      "choices": [
+        {
+          "text": "Accept the debate",
+          "effects": {
+            "knowledge": 5,
+            "legitimacy": 5
+          },
+          "next_event_id": "chain_0004"
+        },
+        {
+          "text": "Refuse and denounce them",
+          "effects": {
+            "authority": 5,
+            "knowledge": -3
+          },
+          "next_event_id": "chain_0004"
+        }
+      ],
+      "conditions": {},
+      "weight": 0,
+      "cooldown": 3
+    },
+    {
+      "id": "evt_0006",
+      "title": "The Heretic Scholar",
+      "description": "A brilliant but controversial scholar has begun teaching alternative interpretations of your sacred texts.",
+      "choices": [
+        {
+          "text": "Invite them to discuss",
+          "effects": {
+            "knowledge": 5,
+            "tolerance": 5
+          },
+          "next_event_id": "chain_0005"
+        },
+        {
+          "text": "Have them arrested",
+          "effects": {
+            "authority": 5,
+            "knowledge": -5,
+            "stability_all": -2
+          }
+        },
+        {
+          "text": "Ignore them",
+          "effects": {}
+        }
+      ],
+      "conditions": {
+        "min_turn": 10
+      },
+      "weight": 12,
+      "cooldown": 5
+    },
+    {
+      "id": "chain_0007",
+      "title": "Plague's End",
+      "description": "The plague has finally subsided. Survivors look to your faith for meaning in their suffering.",
+      "choices": [
+        {
+          "text": "Declare divine mercy",
+          "effects": {
+            "authority": 15,
+            "spread_rate": 5,
+            "legitimacy": 10
+          }
+        },
+        {
+          "text": "Claim divine punishment for sin",
+          "effects": {
+            "authority": 10,
+            "stability_all": -3
+          }
+        }
+      ],
+      "conditions": {},
+      "weight": 0,
+      "cooldown": 3
+    },
+    {
+      "id": "chain_0008",
+      "title": "The Plague Spreads",
+      "description": "The disease has reached multiple cities. Panic grips the population. Many turn to faith for salvation.",
+      "choices": [
+        {
+          "text": "Open healing temples",
+          "effects": {
+            "gold": -80,
+            "spread_rate": 5,
+            "charity": 5
+          },
+          "next_event_id": "chain_0007"
+        },
+        {
+          "text": "Quarantine the faithful",
+          "effects": {
+            "stability_all": -5,
+            "security_all": 3
+          },
+          "next_event_id": "chain_0007"
+        }
+      ],
+      "conditions": {},
+      "weight": 0,
+      "cooldown": 3
+    },
+    {
+      "id": "chain_0009",
+      "title": "Plague Response",
+      "description": "Your advisors urge immediate action. The sick are multiplying.",
+      "choices": [
+        {
+          "text": "Pray for divine intervention",
+          "effects": {
+            "ritual": 5,
+            "authority": 5
+          },
+          "next_event_id": "chain_0008"
+        },
+        {
+          "text": "Send healers and supplies",
+          "effects": {
+            "gold": -50,
+            "charity": 10
+          },
+          "next_event_id": "chain_0008"
+        }
+      ],
+      "conditions": {},
+      "weight": 0,
+      "cooldown": 3
+    },
+    {
+      "id": "evt_0010",
+      "title": "The Great Plague",
+      "description": "A terrible disease has broken out in one of the cities. People are dying by the dozens. They cry out for help.",
+      "choices": [
+        {
+          "text": "Investigate the source",
+          "effects": {
+            "knowledge": 3
+          },
+          "next_event_id": "chain_0009"
+        },
+        {
+          "text": "Seal the city",
+          "effects": {
+            "security_all": 5,
+            "stability_all": -3
+          },
+          "next_event_id": "chain_0009"
+        }
+      ],
+      "conditions": {
+        "min_turn": 15
+      },
+      "weight": 10,
+      "cooldown": 5
+    },
+    {
+      "id": "chain_0011",
+      "title": "The Relic's Power",
+      "description": "Pilgrims flock to see the relic. Miracles are reported. Your faith's influence grows tremendously.",
+      "choices": [
+        {
+          "text": "Build a grand shrine",
+          "effects": {
+            "gold": -150,
+            "authority": 20,
+            "spread_rate": 8
+          }
+        },
+        {
+          "text": "Tour the relic through cities",
+          "effects": {
+            "gold": -50,
+            "spread_rate": 12
+          }
+        }
+      ],
+      "conditions": {},
+      "weight": 0,
+      "cooldown": 3
+    },
+    {
+      "id": "chain_0012",
+      "title": "Authenticating the Relic",
+      "description": "Scholars examine the relic. Some claim it's genuine, others say it's a forgery. The debate could shake faith.",
+      "choices": [
+        {
+          "text": "Declare it authentic by divine authority",
+          "effects": {
+            "authority": 10
+          },
+          "next_event_id": "chain_0011"
+        },
+        {
+          "text": "Allow scholarly examination",
+          "effects": {
+            "knowledge": 10,
+            "legitimacy": 5
+          },
+          "next_event_id": "chain_0011"
+        }
+      ],
+      "conditions": {},
+      "weight": 0,
+      "cooldown": 3
+    },
+    {
+      "id": "evt_0013",
+      "title": "Discovery of a Holy Relic",
+      "description": "Excavators have unearthed what appears to be an ancient artifact of immense spiritual significance.",
+      "choices": [
+        {
+          "text": "Claim it for the faith",
+          "effects": {
+            "authority": 5
+          },
+          "next_event_id": "chain_0012"
+        },
+        {
+          "text": "Study it carefully first",
+          "effects": {
+            "knowledge": 5
+          },
+          "next_event_id": "chain_0012"
+        },
+        {
+          "text": "Dismiss it as mundane",
+          "effects": {
+            "legitimacy": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 8
+      },
+      "weight": 12,
+      "cooldown": 5
+    },
+    {
+      "id": "chain_0014",
+      "title": "Rival Faith Resolution",
+      "description": "The confrontation with the rival faith reaches a critical point. Your followers demand decisive action.",
+      "choices": [
+        {
+          "text": "Absorb their best ideas",
+          "effects": {
+            "tolerance": 15,
+            "knowledge": 5,
+            "heresy_all": 0.03
+          }
+        },
+        {
+          "text": "Crush them utterly",
+          "effects": {
+            "militarism": 10,
+            "authority": 10,
+            "stability_all": -5
+          }
+        },
+        {
+          "text": "Propose coexistence",
+          "effects": {
+            "tolerance": 10,
+            "legitimacy": 10
+          }
+        }
+      ],
+      "conditions": {},
+      "weight": 0,
+      "cooldown": 3
+    },
+    {
+      "id": "chain_0015",
+      "title": "The Rival Grows Bold",
+      "description": "The rival faith has gained a significant following. Their priests openly challenge your authority in the streets.",
+      "choices": [
+        {
+          "text": "Challenge them to a theological contest",
+          "effects": {
+            "knowledge": 5
+          },
+          "next_event_id": "chain_0014"
+        },
+        {
+          "text": "Mobilize the faithful",
+          "effects": {
+            "militarism": 5,
+            "authority": 5
+          },
+          "next_event_id": "chain_0014"
+        }
+      ],
+      "conditions": {},
+      "weight": 0,
+      "cooldown": 3
+    },
+    {
+      "id": "evt_0016",
+      "title": "A Rival Faith Emerges",
+      "description": "A charismatic preacher has begun spreading a competing religion. They claim divine revelation of their own.",
+      "choices": [
+        {
+          "text": "Monitor them closely",
+          "effects": {
+            "knowledge": 3
+          },
+          "next_event_id": "chain_0015"
+        },
+        {
+          "text": "Send missionaries to counter them",
+          "effects": {
+            "gold": -30,
+            "spread_rate": 3
+          },
+          "next_event_id": "chain_0015"
+        }
+      ],
+      "conditions": {
+        "min_turn": 20
+      },
+      "weight": 10,
+      "cooldown": 5
+    },
+    {
+      "id": "chain_0017",
+      "title": "The Kingdom Transforms",
+      "description": "The converted kingdom has fully embraced your faith. Their armies now fly your banners alongside their own.",
+      "choices": [
+        {
+          "text": "Demand tribute",
+          "effects": {
+            "gold": 100,
+            "authority": 5
+          }
+        },
+        {
+          "text": "Form a holy alliance",
+          "effects": {
+            "legitimacy": 15,
+            "spread_rate": 5
+          }
+        }
+      ],
+      "conditions": {},
+      "weight": 0,
+      "cooldown": 3
+    },
+    {
+      "id": "chain_0018",
+      "title": "Royal Baptism",
+      "description": "The king's conversion ceremony is a grand affair. Nobles are divided \u2014 some follow willingly, others seethe.",
+      "choices": [
+        {
+          "text": "Grand public ceremony",
+          "effects": {
+            "authority": 10,
+            "spread_rate": 5
+          },
+          "next_event_id": "chain_0017"
+        },
+        {
+          "text": "Private ceremony for safety",
+          "effects": {
+            "authority": 5,
+            "security_all": 3
+          },
+          "next_event_id": "chain_0017"
+        }
+      ],
+      "conditions": {},
+      "weight": 0,
+      "cooldown": 3
+    },
+    {
+      "id": "evt_0019",
+      "title": "A King Considers Conversion",
+      "description": "The ruler of a powerful kingdom has expressed interest in converting to your faith. This could change everything.",
+      "choices": [
+        {
+          "text": "Send your best theologian",
+          "effects": {
+            "gold": -40,
+            "knowledge": 3
+          },
+          "next_event_id": "chain_0018"
+        },
+        {
+          "text": "Offer political advantages",
+          "effects": {
+            "gold": -80,
+            "commerce": 5
+          },
+          "next_event_id": "chain_0018"
+        }
+      ],
+      "conditions": {
+        "min_faith_spread": 10,
+        "min_turn": 25
+      },
+      "weight": 8,
+      "cooldown": 5
+    },
+    {
+      "id": "chain_0020",
+      "title": "The Canon Established",
+      "description": "The sacred text is complete. It becomes the foundation of your faith's teaching for generations to come.",
+      "choices": [
+        {
+          "text": "Distribute freely to all",
+          "effects": {
+            "knowledge": 10,
+            "spread_rate": 8,
+            "gold": -60
+          }
+        },
+        {
+          "text": "Keep it for the clergy only",
+          "effects": {
+            "authority": 15,
+            "knowledge": -5
+          }
+        }
+      ],
+      "conditions": {},
+      "weight": 0,
+      "cooldown": 3
+    },
+    {
+      "id": "chain_0021",
+      "title": "The Scribes' Debate",
+      "description": "Different scribes have produced varying versions of the text. Which interpretation becomes canon?",
+      "choices": [
+        {
+          "text": "The literal interpretation",
+          "effects": {
+            "ritual": 10,
+            "tolerance": -5
+          },
+          "next_event_id": "chain_0020"
+        },
+        {
+          "text": "The metaphorical interpretation",
+          "effects": {
+            "knowledge": 10,
+            "tolerance": 5
+          },
+          "next_event_id": "chain_0020"
+        },
+        {
+          "text": "A harmonized version",
+          "effects": {
+            "legitimacy": 5
+          },
+          "next_event_id": "chain_0020"
+        }
+      ],
+      "conditions": {},
+      "weight": 0,
+      "cooldown": 3
+    },
+    {
+      "id": "evt_0022",
+      "title": "Writing the Sacred Text",
+      "description": "Your scholars propose codifying your faith's teachings into a definitive holy book.",
+      "choices": [
+        {
+          "text": "Commission the work",
+          "effects": {
+            "gold": -60,
+            "knowledge": 5
+          },
+          "next_event_id": "chain_0021"
+        },
+        {
+          "text": "The faith needs no book",
+          "effects": {
+            "ritual": 5,
+            "authority": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 12
+      },
+      "weight": 12,
+      "cooldown": 5
+    },
+    {
+      "id": "chain_0023",
+      "title": "The Martyr's Legacy",
+      "description": "Stories of the martyr spread like wildfire. Converts flock to your banner. But some question if the sacrifice was necessary.",
+      "choices": [
+        {
+          "text": "Canonize the martyr",
+          "effects": {
+            "authority": 15,
+            "spread_rate": 10,
+            "legitimacy": 10
+          }
+        },
+        {
+          "text": "Honor them quietly",
+          "effects": {
+            "legitimacy": 10,
+            "stability_all": 3
+          }
+        }
+      ],
+      "conditions": {},
+      "weight": 0,
+      "cooldown": 3
+    },
+    {
+      "id": "evt_0024",
+      "title": "A Faithful Martyr",
+      "description": "One of your devoted followers has been executed by a hostile kingdom for refusing to renounce the faith.",
+      "choices": [
+        {
+          "text": "Declare them a saint",
+          "effects": {
+            "authority": 10
+          },
+          "next_event_id": "chain_0023"
+        },
+        {
+          "text": "Demand justice from the kingdom",
+          "effects": {
+            "militarism": 5,
+            "gold": -20
+          },
+          "next_event_id": "chain_0023"
+        },
+        {
+          "text": "Use their sacrifice as propaganda",
+          "effects": {
+            "spread_rate": 5
+          },
+          "next_event_id": "chain_0023"
+        }
+      ],
+      "conditions": {
+        "min_turn": 15
+      },
+      "weight": 10,
+      "cooldown": 5
+    },
+    {
+      "id": "chain_0025",
+      "title": "The Grand Temple Complete",
+      "description": "The temple stands as the greatest monument to your faith. Pilgrims come from across the world to marvel at it.",
+      "choices": [
+        {
+          "text": "Declare it the center of the faith",
+          "effects": {
+            "authority": 20,
+            "spread_rate": 10,
+            "legitimacy": 15
+          }
+        },
+        {
+          "text": "Dedicate it to all seekers of truth",
+          "effects": {
+            "tolerance": 15,
+            "spread_rate": 8
+          }
+        }
+      ],
+      "conditions": {},
+      "weight": 0,
+      "cooldown": 3
+    },
+    {
+      "id": "chain_0026",
+      "title": "Temple Construction Troubles",
+      "description": "The temple project faces setbacks. Workers demand more pay, and the design is more ambitious than expected.",
+      "choices": [
+        {
+          "text": "Increase funding",
+          "effects": {
+            "gold": -100
+          },
+          "next_event_id": "chain_0025"
+        },
+        {
+          "text": "Scale down the design",
+          "effects": {
+            "gold": -30,
+            "authority": -5
+          },
+          "next_event_id": "chain_0025"
+        },
+        {
+          "text": "Use faithful volunteers",
+          "effects": {
+            "stability_all": -3,
+            "charity": 5
+          },
+          "next_event_id": "chain_0025"
+        }
+      ],
+      "conditions": {},
+      "weight": 0,
+      "cooldown": 3
+    },
+    {
+      "id": "evt_0027",
+      "title": "The Grand Temple Project",
+      "description": "Your architects propose building a magnificent temple that would be the wonder of the world.",
+      "choices": [
+        {
+          "text": "Approve the project",
+          "effects": {
+            "gold": -200,
+            "authority": 5
+          },
+          "next_event_id": "chain_0026"
+        },
+        {
+          "text": "Build something modest instead",
+          "effects": {
+            "gold": -50,
+            "austerity": 5
+          }
+        }
+      ],
+      "conditions": {
+        "min_gold": 200,
+        "min_turn": 20
+      },
+      "weight": 8,
+      "cooldown": 5
+    },
+    {
+      "id": "chain_0028",
+      "title": "Inquisition Aftermath",
+      "description": "The inquisition has ended. Order is restored, but at what cost? The faithful are divided.",
+      "choices": [
+        {
+          "text": "Declare victory over heresy",
+          "effects": {
+            "authority": 15,
+            "heresy_all": -0.05
+          }
+        },
+        {
+          "text": "Show mercy to the accused",
+          "effects": {
+            "tolerance": 10,
+            "legitimacy": 10,
+            "heresy_all": -0.02
+          }
+        }
+      ],
+      "conditions": {},
+      "weight": 0,
+      "cooldown": 3
+    },
+    {
+      "id": "chain_0029",
+      "title": "The Inquisition Intensifies",
+      "description": "Your inquisitors have uncovered a vast network of heresy. Hundreds stand accused. The people tremble.",
+      "choices": [
+        {
+          "text": "Public trials for all",
+          "effects": {
+            "authority": 10,
+            "stability_all": -8
+          },
+          "next_event_id": "chain_0028"
+        },
+        {
+          "text": "Target only the leaders",
+          "effects": {
+            "authority": 5,
+            "stability_all": -3
+          },
+          "next_event_id": "chain_0028"
+        }
+      ],
+      "conditions": {},
+      "weight": 0,
+      "cooldown": 3
+    },
+    {
+      "id": "evt_0030",
+      "title": "Call for Inquisition",
+      "description": "Heresy festers in your domain. Your advisors recommend establishing a formal inquisition to root out false beliefs.",
+      "choices": [
+        {
+          "text": "Establish the Inquisition",
+          "effects": {
+            "authority": 10,
+            "stability_all": -5
+          },
+          "next_event_id": "chain_0029"
+        },
+        {
+          "text": "Use persuasion instead",
+          "effects": {
+            "tolerance": 5,
+            "charity": 5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 18
+      },
+      "weight": 10,
+      "cooldown": 5
+    },
+    {
+      "id": "chain_0031",
+      "title": "Trade Route Established",
+      "description": "The merchant network is thriving. Gold flows and your faith travels with every caravan.",
+      "choices": [
+        {
+          "text": "Tax the routes heavily",
+          "effects": {
+            "gold": 80,
+            "commerce": -5
+          }
+        },
+        {
+          "text": "Let trade flow freely",
+          "effects": {
+            "gold": 40,
+            "spread_rate": 5,
+            "commerce": 10
+          }
+        }
+      ],
+      "conditions": {},
+      "weight": 0,
+      "cooldown": 3
+    },
+    {
+      "id": "evt_0032",
+      "title": "The Merchant's Offer",
+      "description": "A wealthy merchant guild offers to fund your faith's expansion in exchange for favorable trade rights.",
+      "choices": [
+        {
+          "text": "Accept the deal",
+          "effects": {
+            "gold": 100,
+            "commerce": 10
+          },
+          "next_event_id": "chain_0031"
+        },
+        {
+          "text": "Reject worldly temptation",
+          "effects": {
+            "austerity": 10,
+            "authority": 5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 8
+      },
+      "weight": 12,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0033",
+      "title": "Pilgrimage Season",
+      "description": "Faithful from across the land embark on pilgrimage. The roads are filled with the devoted.",
+      "choices": [
+        {
+          "text": "Organize grand processions",
+          "effects": {
+            "gold": -30,
+            "spread_rate": 3,
+            "authority": 5
+          }
+        },
+        {
+          "text": "Tax the pilgrims",
+          "effects": {
+            "gold": 50,
+            "legitimacy": -5
+          }
+        },
+        {
+          "text": "Join the pilgrimage personally",
+          "effects": {
+            "authority": 10,
+            "ritual": 5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 14
+      },
+      "weight": 5,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0034",
+      "title": "A Child Prodigy",
+      "description": "A young child displays remarkable spiritual gifts, speaking of visions and performing apparent miracles.",
+      "choices": [
+        {
+          "text": "Declare them blessed",
+          "effects": {
+            "authority": 5,
+            "spread_rate": 3
+          }
+        },
+        {
+          "text": "Test them rigorously",
+          "effects": {
+            "knowledge": 5
+          }
+        },
+        {
+          "text": "Dismiss as coincidence",
+          "effects": {
+            "legitimacy": -3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 9,
+        "min_faith_spread": 8
+      },
+      "weight": 14,
+      "cooldown": 9
+    },
+    {
+      "id": "evt_0035",
+      "title": "Temple Vandalism",
+      "description": "Unknown assailants have desecrated one of your temples. The faithful are outraged.",
+      "choices": [
+        {
+          "text": "Hunt the culprits",
+          "effects": {
+            "security_all": 3,
+            "gold": -20
+          }
+        },
+        {
+          "text": "Rebuild grander than before",
+          "effects": {
+            "gold": -50,
+            "authority": 5
+          }
+        },
+        {
+          "text": "Turn the other cheek",
+          "effects": {
+            "tolerance": 5,
+            "charity": 5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 9,
+        "min_authority": 33
+      },
+      "weight": 13,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0036",
+      "title": "Mystical Phenomenon",
+      "description": "Strange lights appear over a holy site. Crowds gather, interpreting it as a divine sign.",
+      "choices": [
+        {
+          "text": "Proclaim a miracle",
+          "effects": {
+            "authority": 8,
+            "spread_rate": 3
+          }
+        },
+        {
+          "text": "Investigate scientifically",
+          "effects": {
+            "knowledge": 8
+          }
+        },
+        {
+          "text": "Warn against superstition",
+          "effects": {
+            "tolerance": 3,
+            "knowledge": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 24,
+        "min_authority": 16
+      },
+      "weight": 6,
+      "cooldown": 9
+    },
+    {
+      "id": "evt_0037",
+      "title": "Schismatic Preacher",
+      "description": "A popular preacher begins teaching doctrines that differ from official canon.",
+      "choices": [
+        {
+          "text": "Debate them publicly",
+          "effects": {
+            "knowledge": 5,
+            "legitimacy": 3
+          }
+        },
+        {
+          "text": "Excommunicate them",
+          "effects": {
+            "authority": 5,
+            "heresy_all": -0.01
+          }
+        },
+        {
+          "text": "Incorporate their ideas",
+          "effects": {
+            "tolerance": 5,
+            "heresy_all": 0.02
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 24
+      },
+      "weight": 6,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0038",
+      "title": "Noble Conversion",
+      "description": "A prominent noble has converted to your faith, bringing many followers.",
+      "choices": [
+        {
+          "text": "Welcome them grandly",
+          "effects": {
+            "gold": -20,
+            "spread_rate": 3,
+            "authority": 3
+          }
+        },
+        {
+          "text": "Test their sincerity",
+          "effects": {
+            "knowledge": 3,
+            "legitimacy": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 15
+      },
+      "weight": 10,
+      "cooldown": 3
+    },
+    {
+      "id": "evt_0039",
+      "title": "Royal Wedding",
+      "description": "A royal marriage between two kingdoms is planned. They seek your faith's blessing.",
+      "choices": [
+        {
+          "text": "Bless the union",
+          "effects": {
+            "legitimacy": 5,
+            "authority": 3
+          }
+        },
+        {
+          "text": "Demand religious concessions",
+          "effects": {
+            "authority": 8,
+            "legitimacy": -3
+          }
+        },
+        {
+          "text": "Refuse unless both convert",
+          "effects": {
+            "authority": 5,
+            "spread_rate": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 24,
+        "min_faith_spread": 26
+      },
+      "weight": 11,
+      "cooldown": 3
+    },
+    {
+      "id": "evt_0040",
+      "title": "Border Dispute",
+      "description": "Two kingdoms quarrel over territory. Both sides appeal to your faith for mediation.",
+      "choices": [
+        {
+          "text": "Mediate fairly",
+          "effects": {
+            "legitimacy": 10,
+            "authority": 5
+          }
+        },
+        {
+          "text": "Favor the more faithful side",
+          "effects": {
+            "authority": 5,
+            "spread_rate": 2
+          }
+        },
+        {
+          "text": "Stay out of politics",
+          "effects": {
+            "tolerance": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 25,
+        "min_faith_spread": 25
+      },
+      "weight": 14,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0041",
+      "title": "Tax Revolt",
+      "description": "Peasants in a faithful region revolt against heavy taxes. They invoke your teachings of charity.",
+      "choices": [
+        {
+          "text": "Support the peasants",
+          "effects": {
+            "charity": 10,
+            "legitimacy": 5,
+            "stability_all": -3
+          }
+        },
+        {
+          "text": "Urge obedience to authority",
+          "effects": {
+            "authority": 5,
+            "stability_all": 3
+          }
+        },
+        {
+          "text": "Negotiate a compromise",
+          "effects": {
+            "stability_all": 2,
+            "legitimacy": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 29
+      },
+      "weight": 15,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0042",
+      "title": "Diplomatic Mission",
+      "description": "A foreign kingdom sends envoys seeking to learn about your faith.",
+      "choices": [
+        {
+          "text": "Welcome them warmly",
+          "effects": {
+            "tolerance": 5,
+            "spread_rate": 3
+          }
+        },
+        {
+          "text": "Convert them aggressively",
+          "effects": {
+            "spread_rate": 5,
+            "tolerance": -3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 17
+      },
+      "weight": 14,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0043",
+      "title": "Warrior Monks",
+      "description": "Devout warriors seek to form a holy military order dedicated to defending the faith.",
+      "choices": [
+        {
+          "text": "Approve the order",
+          "effects": {
+            "militarism": 10,
+            "security_all": 5,
+            "gold": -40
+          }
+        },
+        {
+          "text": "Refuse \u2014 faith needs no swords",
+          "effects": {
+            "tolerance": 5,
+            "charity": 5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 28
+      },
+      "weight": 12,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0044",
+      "title": "War Refugees",
+      "description": "Refugees from a nearby conflict flood into faithful cities, straining resources.",
+      "choices": [
+        {
+          "text": "Shelter them all",
+          "effects": {
+            "gold": -60,
+            "charity": 10,
+            "spread_rate": 3
+          }
+        },
+        {
+          "text": "Accept only the faithful",
+          "effects": {
+            "authority": 3,
+            "tolerance": -5
+          }
+        },
+        {
+          "text": "Turn them away",
+          "effects": {
+            "gold": 10,
+            "legitimacy": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 22
+      },
+      "weight": 7,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0045",
+      "title": "Mercenary Offer",
+      "description": "A band of mercenaries offers their swords in service of your faith \u2014 for a price.",
+      "choices": [
+        {
+          "text": "Hire them",
+          "effects": {
+            "gold": -80,
+            "militarism": 5,
+            "security_all": 5
+          }
+        },
+        {
+          "text": "Decline",
+          "effects": {}
+        }
+      ],
+      "conditions": {
+        "min_turn": 5
+      },
+      "weight": 5,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0046",
+      "title": "Victory Celebration",
+      "description": "Your forces have won a significant battle. The faithful rejoice.",
+      "choices": [
+        {
+          "text": "Grand celebration",
+          "effects": {
+            "gold": -30,
+            "authority": 5,
+            "stability_all": 3
+          }
+        },
+        {
+          "text": "Solemn memorial",
+          "effects": {
+            "legitimacy": 5,
+            "charity": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 1
+      },
+      "weight": 7,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0047",
+      "title": "Fortress of Faith",
+      "description": "Engineers propose building a great fortress to protect a holy site.",
+      "choices": [
+        {
+          "text": "Build it",
+          "effects": {
+            "gold": -120,
+            "security_all": 8
+          }
+        },
+        {
+          "text": "Faith is our shield",
+          "effects": {
+            "authority": 3,
+            "ritual": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 13,
+        "min_faith_spread": 27
+      },
+      "weight": 10,
+      "cooldown": 3
+    },
+    {
+      "id": "evt_0048",
+      "title": "Bountiful Harvest",
+      "description": "The harvest this year is exceptionally abundant. Farmers praise your faith's blessings.",
+      "choices": [
+        {
+          "text": "Declare a festival",
+          "effects": {
+            "gold": 20,
+            "stability_all": 3,
+            "spread_rate": 2
+          }
+        },
+        {
+          "text": "Store for lean times",
+          "effects": {
+            "gold": 40,
+            "security_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 13
+      },
+      "weight": 7,
+      "cooldown": 3
+    },
+    {
+      "id": "evt_0049",
+      "title": "Famine",
+      "description": "Crops have failed across the region. People are starving and desperate.",
+      "choices": [
+        {
+          "text": "Open granaries",
+          "effects": {
+            "gold": -60,
+            "charity": 10,
+            "stability_all": 3
+          }
+        },
+        {
+          "text": "Ration carefully",
+          "effects": {
+            "gold": -20,
+            "stability_all": -3
+          }
+        },
+        {
+          "text": "Pray for rain",
+          "effects": {
+            "ritual": 5,
+            "authority": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 22,
+        "min_authority": 30
+      },
+      "weight": 13,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0050",
+      "title": "Gold Mine Discovered",
+      "description": "A rich gold mine has been found in territory controlled by the faithful.",
+      "choices": [
+        {
+          "text": "Claim it for the faith",
+          "effects": {
+            "gold": 100,
+            "authority": 3
+          }
+        },
+        {
+          "text": "Share with the local kingdom",
+          "effects": {
+            "gold": 50,
+            "legitimacy": 5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 16
+      },
+      "weight": 10,
+      "cooldown": 9
+    },
+    {
+      "id": "evt_0051",
+      "title": "Trade Disruption",
+      "description": "Bandits have been attacking trade caravans, disrupting commerce.",
+      "choices": [
+        {
+          "text": "Send patrols",
+          "effects": {
+            "gold": -30,
+            "security_all": 5
+          }
+        },
+        {
+          "text": "Negotiate with the bandits",
+          "effects": {
+            "gold": -20,
+            "stability_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 12,
+        "min_authority": 15
+      },
+      "weight": 15,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0052",
+      "title": "Wealthy Benefactor",
+      "description": "An incredibly wealthy patron wishes to donate to your faith.",
+      "choices": [
+        {
+          "text": "Accept gratefully",
+          "effects": {
+            "gold": 150
+          }
+        },
+        {
+          "text": "Accept but redistribute to poor",
+          "effects": {
+            "gold": 50,
+            "charity": 15,
+            "spread_rate": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 29,
+        "min_faith_spread": 10
+      },
+      "weight": 10,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0053",
+      "title": "Sacred Music",
+      "description": "Composers have created beautiful hymns that move all who hear them.",
+      "choices": [
+        {
+          "text": "Standardize the hymnal",
+          "effects": {
+            "ritual": 5,
+            "spread_rate": 2
+          }
+        },
+        {
+          "text": "Allow creative freedom",
+          "effects": {
+            "tolerance": 5,
+            "knowledge": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 18,
+        "min_faith_spread": 26
+      },
+      "weight": 6,
+      "cooldown": 3
+    },
+    {
+      "id": "evt_0054",
+      "title": "Ancient Ruins",
+      "description": "Explorers discover ruins of an ancient civilization with mysterious inscriptions.",
+      "choices": [
+        {
+          "text": "Study the inscriptions",
+          "effects": {
+            "knowledge": 10
+          }
+        },
+        {
+          "text": "Claim them as proof of your faith's antiquity",
+          "effects": {
+            "authority": 5,
+            "legitimacy": 5
+          }
+        },
+        {
+          "text": "Seal the ruins",
+          "effects": {
+            "security_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 6,
+        "min_faith_spread": 29
+      },
+      "weight": 14,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0055",
+      "title": "Festival of Lights",
+      "description": "The faithful wish to establish an annual festival celebrating illumination and truth.",
+      "choices": [
+        {
+          "text": "Grand festival",
+          "effects": {
+            "gold": -40,
+            "ritual": 10,
+            "spread_rate": 3
+          }
+        },
+        {
+          "text": "Modest observance",
+          "effects": {
+            "austerity": 5,
+            "ritual": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 26,
+        "min_faith_spread": 10,
+        "min_authority": 20
+      },
+      "weight": 12,
+      "cooldown": 9
+    },
+    {
+      "id": "evt_0056",
+      "title": "Foreign Philosophy",
+      "description": "Scholars bring knowledge of foreign philosophies that could enrich or challenge your faith.",
+      "choices": [
+        {
+          "text": "Study and integrate",
+          "effects": {
+            "knowledge": 10,
+            "tolerance": 5
+          }
+        },
+        {
+          "text": "Ban foreign ideas",
+          "effects": {
+            "authority": 5,
+            "knowledge": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 6,
+        "min_faith_spread": 26
+      },
+      "weight": 11,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0057",
+      "title": "Artistic Renaissance",
+      "description": "A wave of artistic creativity sweeps through faithful communities.",
+      "choices": [
+        {
+          "text": "Commission sacred art",
+          "effects": {
+            "gold": -50,
+            "spread_rate": 5,
+            "ritual": 5
+          }
+        },
+        {
+          "text": "Art is vanity",
+          "effects": {
+            "austerity": 5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 29
+      },
+      "weight": 8,
+      "cooldown": 9
+    },
+    {
+      "id": "evt_0058",
+      "title": "Earthquake",
+      "description": "A powerful earthquake devastates several cities. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Lead relief efforts",
+          "effects": {
+            "gold": -80,
+            "charity": 10,
+            "legitimacy": 10
+          }
+        },
+        {
+          "text": "Declare divine warning",
+          "effects": {
+            "authority": 10,
+            "stability_all": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 4
+      },
+      "weight": 6,
+      "cooldown": 10
+    },
+    {
+      "id": "evt_0059",
+      "title": "Flood",
+      "description": "Severe flooding destroys homes and farmland. Many are left homeless.",
+      "choices": [
+        {
+          "text": "Build shelters",
+          "effects": {
+            "gold": -50,
+            "charity": 8,
+            "stability_all": 2
+          }
+        },
+        {
+          "text": "Pray for deliverance",
+          "effects": {
+            "ritual": 5,
+            "authority": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 19
+      },
+      "weight": 8,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0060",
+      "title": "Eclipse",
+      "description": "A solar eclipse terrifies the population. Superstition runs rampant.",
+      "choices": [
+        {
+          "text": "Explain it as natural",
+          "effects": {
+            "knowledge": 8,
+            "authority": -3
+          }
+        },
+        {
+          "text": "Interpret it as a sign",
+          "effects": {
+            "authority": 8,
+            "ritual": 5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 19
+      },
+      "weight": 9,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0061",
+      "title": "Drought",
+      "description": "A prolonged drought threatens agriculture and water supplies.",
+      "choices": [
+        {
+          "text": "Organize water rationing",
+          "effects": {
+            "stability_all": -3,
+            "security_all": 3
+          }
+        },
+        {
+          "text": "Conduct rain ceremonies",
+          "effects": {
+            "ritual": 8,
+            "authority": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 22,
+        "min_authority": 35
+      },
+      "weight": 5,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0062",
+      "title": "Locust Swarm",
+      "description": "A massive swarm of locusts devours crops across multiple regions.",
+      "choices": [
+        {
+          "text": "Distribute stored grain",
+          "effects": {
+            "gold": -40,
+            "charity": 8
+          }
+        },
+        {
+          "text": "Fast and pray",
+          "effects": {
+            "austerity": 8,
+            "ritual": 5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 17,
+        "min_authority": 21
+      },
+      "weight": 13,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0063",
+      "title": "Corruption Scandal",
+      "description": "High-ranking clergy members are found to be embezzling faith funds.",
+      "choices": [
+        {
+          "text": "Public punishment",
+          "effects": {
+            "authority": 5,
+            "legitimacy": 5,
+            "stability_all": -2
+          }
+        },
+        {
+          "text": "Quiet removal",
+          "effects": {
+            "stability_all": 2,
+            "legitimacy": -3
+          }
+        },
+        {
+          "text": "Reform the system",
+          "effects": {
+            "knowledge": 5,
+            "gold": -30
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 29,
+        "min_faith_spread": 19
+      },
+      "weight": 15,
+      "cooldown": 3
+    },
+    {
+      "id": "evt_0064",
+      "title": "Succession Crisis",
+      "description": "The head of a major temple has died without naming a successor.",
+      "choices": [
+        {
+          "text": "Appoint someone loyal",
+          "effects": {
+            "authority": 5
+          }
+        },
+        {
+          "text": "Hold elections",
+          "effects": {
+            "tolerance": 5,
+            "legitimacy": 5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 13
+      },
+      "weight": 9,
+      "cooldown": 10
+    },
+    {
+      "id": "evt_0065",
+      "title": "Theological Dispute",
+      "description": "Scholars disagree on a fundamental point of doctrine. The debate grows heated.",
+      "choices": [
+        {
+          "text": "Convene a council",
+          "effects": {
+            "knowledge": 8,
+            "authority": 3
+          }
+        },
+        {
+          "text": "Rule by decree",
+          "effects": {
+            "authority": 8,
+            "knowledge": -3
+          }
+        },
+        {
+          "text": "Allow multiple interpretations",
+          "effects": {
+            "tolerance": 8,
+            "heresy_all": 0.01
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 16,
+        "min_faith_spread": 5
+      },
+      "weight": 12,
+      "cooldown": 3
+    },
+    {
+      "id": "evt_0066",
+      "title": "Youth Movement",
+      "description": "Young believers are pushing for reform and modernization of the faith.",
+      "choices": [
+        {
+          "text": "Embrace change",
+          "effects": {
+            "tolerance": 8,
+            "knowledge": 5,
+            "authority": -3
+          }
+        },
+        {
+          "text": "Maintain tradition",
+          "effects": {
+            "ritual": 5,
+            "authority": 5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 5,
+        "min_faith_spread": 24
+      },
+      "weight": 5,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0067",
+      "title": "Monastic Order",
+      "description": "Devout followers wish to establish a contemplative monastic order.",
+      "choices": [
+        {
+          "text": "Approve and fund",
+          "effects": {
+            "gold": -40,
+            "knowledge": 8,
+            "austerity": 5
+          }
+        },
+        {
+          "text": "The faith is lived in the world",
+          "effects": {
+            "commerce": 3,
+            "charity": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 28,
+        "min_faith_spread": 16
+      },
+      "weight": 11,
+      "cooldown": 10
+    },
+    {
+      "id": "evt_0068",
+      "title": "Strange Omen",
+      "description": "A two-headed calf is born in a faithful village. The people see it as an omen.",
+      "choices": [
+        {
+          "text": "Good omen \u2014 celebrate",
+          "effects": {
+            "authority": 3,
+            "spread_rate": 2
+          }
+        },
+        {
+          "text": "Bad omen \u2014 purify the village",
+          "effects": {
+            "ritual": 5,
+            "stability_all": -2
+          }
+        },
+        {
+          "text": "It's just nature",
+          "effects": {
+            "knowledge": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 10,
+        "min_faith_spread": 14
+      },
+      "weight": 10,
+      "cooldown": 9
+    },
+    {
+      "id": "evt_0069",
+      "title": "Printing Revolution",
+      "description": "A new method of copying texts quickly has been developed.",
+      "choices": [
+        {
+          "text": "Use it to spread scripture",
+          "effects": {
+            "gold": -30,
+            "spread_rate": 8,
+            "knowledge": 5
+          }
+        },
+        {
+          "text": "Control its use carefully",
+          "effects": {
+            "authority": 5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 28,
+        "min_faith_spread": 7,
+        "min_authority": 19
+      },
+      "weight": 5,
+      "cooldown": 9
+    },
+    {
+      "id": "evt_0070",
+      "title": "Holy Spring Discovered",
+      "description": "A spring with seemingly healing waters has been found.",
+      "choices": [
+        {
+          "text": "Declare it holy",
+          "effects": {
+            "authority": 5,
+            "spread_rate": 5,
+            "ritual": 5
+          }
+        },
+        {
+          "text": "Study the waters",
+          "effects": {
+            "knowledge": 8
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 8,
+        "min_faith_spread": 9,
+        "min_authority": 26
+      },
+      "weight": 10,
+      "cooldown": 9
+    },
+    {
+      "id": "evt_0071",
+      "title": "Ambassador's Gift",
+      "description": "A foreign ruler sends lavish gifts seeking your faith's favor.",
+      "choices": [
+        {
+          "text": "Accept with honor",
+          "effects": {
+            "gold": 60,
+            "legitimacy": 3
+          }
+        },
+        {
+          "text": "Return them \u2014 we cannot be bought",
+          "effects": {
+            "austerity": 5,
+            "authority": 5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 2,
+        "min_authority": 13
+      },
+      "weight": 10,
+      "cooldown": 9
+    },
+    {
+      "id": "evt_0072",
+      "title": "Cemetery Miracle",
+      "description": "A faithful follower reportedly rose from the dead, then died again peacefully.",
+      "choices": [
+        {
+          "text": "Investigate and proclaim",
+          "effects": {
+            "authority": 8,
+            "spread_rate": 5
+          }
+        },
+        {
+          "text": "Treat it skeptically",
+          "effects": {
+            "knowledge": 5,
+            "authority": -3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 16,
+        "min_faith_spread": 22
+      },
+      "weight": 7,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0073",
+      "title": "Starving Beggars",
+      "description": "Masses of starving beggars gather outside your temples seeking aid.",
+      "choices": [
+        {
+          "text": "Feed them all",
+          "effects": {
+            "gold": -40,
+            "charity": 10,
+            "legitimacy": 5
+          }
+        },
+        {
+          "text": "Teach them to fish",
+          "effects": {
+            "education_all": 3,
+            "knowledge": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 24,
+        "min_authority": 26
+      },
+      "weight": 9,
+      "cooldown": 3
+    },
+    {
+      "id": "evt_0074",
+      "title": "Secret Society",
+      "description": "Reports indicate a secret society working against your faith from within.",
+      "choices": [
+        {
+          "text": "Root them out",
+          "effects": {
+            "security_all": 5,
+            "stability_all": -3,
+            "gold": -30
+          }
+        },
+        {
+          "text": "Infiltrate them",
+          "effects": {
+            "knowledge": 5,
+            "security_all": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 7,
+        "min_authority": 26
+      },
+      "weight": 13,
+      "cooldown": 9
+    },
+    {
+      "id": "evt_0075",
+      "title": "Miracle Healer",
+      "description": "A person claiming to heal through faith alone draws massive crowds.",
+      "choices": [
+        {
+          "text": "Endorse them",
+          "effects": {
+            "spread_rate": 5,
+            "authority": 3
+          }
+        },
+        {
+          "text": "Test their claims",
+          "effects": {
+            "knowledge": 5
+          }
+        },
+        {
+          "text": "Denounce as fraud",
+          "effects": {
+            "authority": 3,
+            "spread_rate": -2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 5
+      },
+      "weight": 14,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0076",
+      "title": "Astronomical Discovery",
+      "description": "Scholars make a remarkable discovery about the stars.",
+      "choices": [
+        {
+          "text": "Incorporate into theology",
+          "effects": {
+            "knowledge": 8,
+            "ritual": 3
+          }
+        },
+        {
+          "text": "Suppress the findings",
+          "effects": {
+            "authority": 3,
+            "knowledge": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 6
+      },
+      "weight": 12,
+      "cooldown": 9
+    },
+    {
+      "id": "evt_0077",
+      "title": "Foreign Missionary",
+      "description": "Missionaries from a distant land arrive preaching a strange faith.",
+      "choices": [
+        {
+          "text": "Welcome and debate",
+          "effects": {
+            "tolerance": 5,
+            "knowledge": 5
+          }
+        },
+        {
+          "text": "Expel them",
+          "effects": {
+            "authority": 3,
+            "tolerance": -3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 1
+      },
+      "weight": 11,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0078",
+      "title": "Ancient Prophecy",
+      "description": "An ancient prophecy is discovered that seems to predict your faith's rise.",
+      "choices": [
+        {
+          "text": "Publicize it widely",
+          "effects": {
+            "authority": 8,
+            "spread_rate": 5
+          }
+        },
+        {
+          "text": "Verify its authenticity",
+          "effects": {
+            "knowledge": 5,
+            "legitimacy": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 20,
+        "min_authority": 20
+      },
+      "weight": 5,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0079",
+      "title": "Mass Baptism",
+      "description": "Thousands wish to be baptized into your faith at once.",
+      "choices": [
+        {
+          "text": "Welcome them all",
+          "effects": {
+            "spread_rate": 8,
+            "authority": 3
+          }
+        },
+        {
+          "text": "Require education first",
+          "effects": {
+            "education_all": 3,
+            "knowledge": 5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 13
+      },
+      "weight": 9,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0080",
+      "title": "Heretical Book",
+      "description": "A book criticizing your faith becomes wildly popular.",
+      "choices": [
+        {
+          "text": "Ban and burn it",
+          "effects": {
+            "authority": 5,
+            "knowledge": -3,
+            "stability_all": -2
+          }
+        },
+        {
+          "text": "Write a rebuttal",
+          "effects": {
+            "knowledge": 8,
+            "legitimacy": 5
+          }
+        },
+        {
+          "text": "Ignore it",
+          "effects": {
+            "tolerance": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 19,
+        "min_authority": 15
+      },
+      "weight": 6,
+      "cooldown": 10
+    },
+    {
+      "id": "evt_0081",
+      "title": "Peace Conference",
+      "description": "Multiple kingdoms propose a peace conference, seeking your faith's moral authority to broker it.",
+      "choices": [
+        {
+          "text": "Host the conference",
+          "effects": {
+            "gold": -50,
+            "legitimacy": 15,
+            "authority": 5
+          }
+        },
+        {
+          "text": "Decline \u2014 stay neutral",
+          "effects": {
+            "tolerance": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 2
+      },
+      "weight": 5,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0082",
+      "title": "Volcanic Eruption",
+      "description": "A distant volcano erupts, sending ash clouds across the sky. People are terrified.",
+      "choices": [
+        {
+          "text": "Comfort the frightened",
+          "effects": {
+            "charity": 8,
+            "legitimacy": 5
+          }
+        },
+        {
+          "text": "Interpret as divine anger",
+          "effects": {
+            "authority": 8,
+            "ritual": 5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 15,
+        "min_faith_spread": 12
+      },
+      "weight": 12,
+      "cooldown": 10
+    },
+    {
+      "id": "evt_0083",
+      "title": "The Ancient Prophecy",
+      "description": "A ancient prophecy brings hope across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 10,
+            "ritual": 3
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 4
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 2,
+            "tolerance": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 5
+      },
+      "weight": 6,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0084",
+      "title": "The Eternal Dawn",
+      "description": "A eternal dawn strengthens belief across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 10,
+            "knowledge": 7
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 8
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 3,
+            "spread_rate": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 34
+      },
+      "weight": 5,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0085",
+      "title": "The Radiant Revelation",
+      "description": "A radiant revelation unites the people across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 4,
+            "knowledge": 5
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 5
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 5,
+            "spread_rate": -2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 37
+      },
+      "weight": 6,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0086",
+      "title": "The Blessed Dawn",
+      "description": "A blessed dawn threatens stability. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 7
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 5
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 2,
+            "stability_all": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 18
+      },
+      "weight": 5,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0087",
+      "title": "The Ancient Omen",
+      "description": "A ancient omen divides opinion. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 8
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "knowledge": 8
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 3,
+            "stability_all": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 17
+      },
+      "weight": 8,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0088",
+      "title": "The Blessed Miracle",
+      "description": "A blessed miracle causes doubt. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 4
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 5
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 4,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 9
+      },
+      "weight": 9,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0089",
+      "title": "The Eternal Oracle",
+      "description": "A eternal oracle unites the people across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 9,
+            "charity": 7
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 7
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 4,
+            "tolerance": -2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 31
+      },
+      "weight": 7,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0090",
+      "title": "The Divine Vision",
+      "description": "A divine vision causes doubt. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 8
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "knowledge": 9
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 5,
+            "stability_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 6
+      },
+      "weight": 11,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0091",
+      "title": "The Mystic Omen",
+      "description": "A mystic omen causes doubt. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 4
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 3
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 4,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 18
+      },
+      "weight": 7,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0092",
+      "title": "The Holy Miracle",
+      "description": "A holy miracle brings hope across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "legitimacy": 9,
+            "ritual": 4
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 8
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 2,
+            "spread_rate": -2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 32
+      },
+      "weight": 7,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0093",
+      "title": "The Ancient Dawn",
+      "description": "A ancient dawn divides opinion. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 6
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "knowledge": 3
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 5,
+            "stability_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 15
+      },
+      "weight": 11,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0094",
+      "title": "The Blessed Dawn",
+      "description": "A blessed dawn threatens stability. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 7
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 9
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 4,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 10
+      },
+      "weight": 7,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0095",
+      "title": "The Divine Vision",
+      "description": "A divine vision tests the faithful. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 3
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 6
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 2,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 22
+      },
+      "weight": 9,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0096",
+      "title": "The Blessed Storm",
+      "description": "A blessed storm challenges authority. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 5
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "knowledge": 9
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 2,
+            "stability_all": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 8
+      },
+      "weight": 12,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0097",
+      "title": "The Ancient Omen",
+      "description": "A ancient omen inspires the faithful across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 7,
+            "charity": 2
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 4
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 4,
+            "tolerance": -3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 23
+      },
+      "weight": 5,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0098",
+      "title": "The Holy Omen",
+      "description": "A holy omen causes doubt. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 3
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 5
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 5,
+            "stability_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 38
+      },
+      "weight": 11,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0099",
+      "title": "The Holy Prophecy",
+      "description": "A holy prophecy challenges authority. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 6
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 8
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 2,
+            "stability_all": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 10
+      },
+      "weight": 5,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0100",
+      "title": "The Ancient Prophecy",
+      "description": "A ancient prophecy divides opinion. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 5
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 8
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 5,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 22
+      },
+      "weight": 7,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0101",
+      "title": "The Celestial Storm",
+      "description": "A celestial storm inspires the faithful across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "legitimacy": 3,
+            "knowledge": 3
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 4
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 4,
+            "spread_rate": -3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 1
+      },
+      "weight": 10,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0102",
+      "title": "The Radiant Omen",
+      "description": "A radiant omen spreads joy across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 5,
+            "knowledge": 8
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 3
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 2,
+            "spread_rate": -4
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 3
+      },
+      "weight": 12,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0103",
+      "title": "The Mystic Miracle",
+      "description": "A mystic miracle brings hope across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 6,
+            "charity": 3
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 6
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 4,
+            "tolerance": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 21
+      },
+      "weight": 11,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0104",
+      "title": "The Hallowed Miracle",
+      "description": "A hallowed miracle unites the people across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "legitimacy": 3,
+            "knowledge": 7
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 6
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 5,
+            "tolerance": -2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 31
+      },
+      "weight": 8,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0105",
+      "title": "The Divine Revelation",
+      "description": "A divine revelation inspires the faithful across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 4,
+            "charity": 8
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 4
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 3,
+            "tolerance": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 9
+      },
+      "weight": 5,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0106",
+      "title": "The Eternal Vision",
+      "description": "A eternal vision divides opinion. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 6
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 6
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 4,
+            "stability_all": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 6
+      },
+      "weight": 5,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0107",
+      "title": "The Mystic Vision",
+      "description": "A mystic vision spreads joy across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 9,
+            "ritual": 5
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 6
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 5,
+            "tolerance": -2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 10
+      },
+      "weight": 11,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0108",
+      "title": "The Blessed Blessing",
+      "description": "A blessed blessing threatens stability. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 3
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 10
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 4,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 39
+      },
+      "weight": 9,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0109",
+      "title": "The Radiant Omen",
+      "description": "A radiant omen unites the people across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 8,
+            "charity": 5
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 4
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 5,
+            "tolerance": -4
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 8
+      },
+      "weight": 7,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0110",
+      "title": "The Blessed Vision",
+      "description": "A blessed vision unites the people across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 3,
+            "ritual": 6
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 6
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 5,
+            "spread_rate": -3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 27
+      },
+      "weight": 5,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0111",
+      "title": "The Sacred Revelation",
+      "description": "A sacred revelation strengthens belief across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 10,
+            "charity": 6
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 7
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 5,
+            "tolerance": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 6
+      },
+      "weight": 7,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0112",
+      "title": "The Celestial Dawn",
+      "description": "A celestial dawn strengthens belief across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "legitimacy": 8,
+            "knowledge": 5
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 5
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 5,
+            "tolerance": -4
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 16
+      },
+      "weight": 12,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0113",
+      "title": "The Hallowed Storm",
+      "description": "A hallowed storm strengthens belief across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 8,
+            "knowledge": 4
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 8
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 3,
+            "spread_rate": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 7
+      },
+      "weight": 12,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0114",
+      "title": "The Celestial Judgment",
+      "description": "A celestial judgment challenges authority. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 6
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 6
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 4,
+            "stability_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 21
+      },
+      "weight": 11,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0115",
+      "title": "The Radiant Vision",
+      "description": "A radiant vision divides opinion. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 3
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 6
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 2,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 24
+      },
+      "weight": 5,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0116",
+      "title": "The Divine Miracle",
+      "description": "A divine miracle challenges authority. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 4
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 8
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 4,
+            "stability_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 28
+      },
+      "weight": 8,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0117",
+      "title": "The Celestial Oracle",
+      "description": "A celestial oracle brings hope across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 10,
+            "charity": 3
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 8
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 3,
+            "tolerance": -2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 34
+      },
+      "weight": 10,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0118",
+      "title": "The Blessed Revelation",
+      "description": "A blessed revelation inspires the faithful across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 4,
+            "charity": 2
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 7
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 4,
+            "spread_rate": -4
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 25
+      },
+      "weight": 6,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0119",
+      "title": "The Blessed Judgment",
+      "description": "A blessed judgment inspires the faithful across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 5,
+            "charity": 4
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 3
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 3,
+            "spread_rate": -4
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 33
+      },
+      "weight": 12,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0120",
+      "title": "The Eternal Miracle",
+      "description": "A eternal miracle spreads joy across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "legitimacy": 3,
+            "charity": 4
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 3
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 3,
+            "tolerance": -3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 19
+      },
+      "weight": 12,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0121",
+      "title": "The Divine Oracle",
+      "description": "A divine oracle challenges authority. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 7
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 4
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 4,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 38
+      },
+      "weight": 11,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0122",
+      "title": "The Radiant Oracle",
+      "description": "A radiant oracle challenges authority. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 7
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 7
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 3,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 27
+      },
+      "weight": 8,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0123",
+      "title": "The Ancient Prophecy",
+      "description": "A ancient prophecy strengthens belief across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 8,
+            "ritual": 5
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 8
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 4,
+            "tolerance": -2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 6
+      },
+      "weight": 8,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0124",
+      "title": "The Holy Storm",
+      "description": "A holy storm challenges authority. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 7
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "knowledge": 7
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 5,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 21
+      },
+      "weight": 11,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0125",
+      "title": "The Celestial Vision",
+      "description": "A celestial vision divides opinion. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 7
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 3
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 2,
+            "stability_all": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 24
+      },
+      "weight": 7,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0126",
+      "title": "The Holy Miracle",
+      "description": "A holy miracle brings hope across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 4,
+            "knowledge": 8
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 5
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 2,
+            "spread_rate": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 7
+      },
+      "weight": 7,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0127",
+      "title": "The Holy Revelation",
+      "description": "A holy revelation inspires the faithful across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 6,
+            "charity": 7
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 8
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 3,
+            "spread_rate": -2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 19
+      },
+      "weight": 6,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0128",
+      "title": "The Ancient Revelation",
+      "description": "A ancient revelation strengthens belief across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 6,
+            "knowledge": 4
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 5
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 2,
+            "spread_rate": -2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 33
+      },
+      "weight": 12,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0129",
+      "title": "The Radiant Vision",
+      "description": "A radiant vision challenges authority. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 6
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "knowledge": 4
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 4,
+            "stability_all": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 28
+      },
+      "weight": 6,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0130",
+      "title": "The Ancient Blessing",
+      "description": "A ancient blessing strengthens belief across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 3,
+            "charity": 6
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 3
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 5,
+            "tolerance": -3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 36
+      },
+      "weight": 9,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0131",
+      "title": "The Eternal Oracle",
+      "description": "A eternal oracle inspires the faithful across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 9,
+            "knowledge": 7
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 7
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 2,
+            "tolerance": -3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 26
+      },
+      "weight": 5,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0132",
+      "title": "The Radiant Blessing",
+      "description": "A radiant blessing divides opinion. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 3
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 4
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 2,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 10
+      },
+      "weight": 5,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0133",
+      "title": "The Blessed Prophecy",
+      "description": "A blessed prophecy divides opinion. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 4
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 9
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 4,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 30
+      },
+      "weight": 8,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0134",
+      "title": "The Radiant Judgment",
+      "description": "A radiant judgment tests the faithful. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 3
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 9
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 5,
+            "stability_all": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 20
+      },
+      "weight": 12,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0135",
+      "title": "The Mystic Revelation",
+      "description": "A mystic revelation divides opinion. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 6
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 4
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 2,
+            "stability_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 8
+      },
+      "weight": 9,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0136",
+      "title": "The Radiant Miracle",
+      "description": "A radiant miracle challenges authority. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 6
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 7
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 2,
+            "stability_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 17
+      },
+      "weight": 9,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0137",
+      "title": "The Divine Storm",
+      "description": "A divine storm divides opinion. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 5
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 8
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 6,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 16
+      },
+      "weight": 7,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0138",
+      "title": "The Sacred Revelation",
+      "description": "A sacred revelation unites the people across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 5,
+            "knowledge": 8
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 6
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 2,
+            "tolerance": -2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 32
+      },
+      "weight": 6,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0139",
+      "title": "The Eternal Dawn",
+      "description": "A eternal dawn brings hope across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "legitimacy": 6,
+            "knowledge": 8
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 7
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 3,
+            "tolerance": -3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 5
+      },
+      "weight": 5,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0140",
+      "title": "The Hallowed Prophecy",
+      "description": "A hallowed prophecy causes doubt. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 8
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 5
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 4,
+            "stability_all": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 39
+      },
+      "weight": 10,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0141",
+      "title": "The Divine Vision",
+      "description": "A divine vision divides opinion. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 4
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "knowledge": 7
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 5,
+            "stability_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 17
+      },
+      "weight": 12,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0142",
+      "title": "The Holy Vision",
+      "description": "A holy vision challenges authority. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 5
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "knowledge": 9
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 2,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 17
+      },
+      "weight": 9,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0143",
+      "title": "The Divine Prophecy",
+      "description": "A divine prophecy unites the people across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "legitimacy": 5,
+            "ritual": 8
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 8
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 5,
+            "spread_rate": -2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 14
+      },
+      "weight": 8,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0144",
+      "title": "The Eternal Dawn",
+      "description": "A eternal dawn strengthens belief across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 9,
+            "charity": 2
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 7
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 3,
+            "spread_rate": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 17
+      },
+      "weight": 7,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0145",
+      "title": "The Holy Oracle",
+      "description": "A holy oracle divides opinion. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 4
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "knowledge": 3
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 4,
+            "stability_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 37
+      },
+      "weight": 7,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0146",
+      "title": "The Eternal Storm",
+      "description": "A eternal storm strengthens belief across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 8,
+            "ritual": 7
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 6
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 2,
+            "tolerance": -4
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 18
+      },
+      "weight": 11,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0147",
+      "title": "The Eternal Miracle",
+      "description": "A eternal miracle unites the people across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 6,
+            "ritual": 4
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 7
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 4,
+            "spread_rate": -2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 35
+      },
+      "weight": 5,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0148",
+      "title": "The Blessed Vision",
+      "description": "A blessed vision challenges authority. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 6
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 3
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 3,
+            "stability_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 4
+      },
+      "weight": 6,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0149",
+      "title": "The Hallowed Vision",
+      "description": "A hallowed vision spreads joy across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "legitimacy": 4,
+            "charity": 7
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 5
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 4,
+            "tolerance": -4
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 3
+      },
+      "weight": 6,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0150",
+      "title": "The Mystic Blessing",
+      "description": "A mystic blessing tests the faithful. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 7
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 10
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 2,
+            "stability_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 21
+      },
+      "weight": 10,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0151",
+      "title": "The Holy Oracle",
+      "description": "A holy oracle strengthens belief across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "legitimacy": 3,
+            "knowledge": 7
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 7
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 3,
+            "spread_rate": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 10
+      },
+      "weight": 11,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0152",
+      "title": "The Sacred Judgment",
+      "description": "A sacred judgment divides opinion. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 7
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "knowledge": 7
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 4,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 6
+      },
+      "weight": 8,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0153",
+      "title": "The Eternal Revelation",
+      "description": "A eternal revelation inspires the faithful across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "legitimacy": 9,
+            "charity": 3
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 5
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 2,
+            "tolerance": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 28
+      },
+      "weight": 9,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0154",
+      "title": "The Mystic Miracle",
+      "description": "A mystic miracle brings hope across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 5,
+            "charity": 6
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 8
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 4,
+            "tolerance": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 20
+      },
+      "weight": 5,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0155",
+      "title": "The Blessed Miracle",
+      "description": "A blessed miracle tests the faithful. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 3
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 9
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 3,
+            "stability_all": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 11
+      },
+      "weight": 10,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0156",
+      "title": "The Divine Omen",
+      "description": "A divine omen threatens stability. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 4
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 6
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 3,
+            "stability_all": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 39
+      },
+      "weight": 5,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0157",
+      "title": "The Blessed Blessing",
+      "description": "A blessed blessing tests the faithful. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 3
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "knowledge": 7
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 4,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 13
+      },
+      "weight": 8,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0158",
+      "title": "The Celestial Miracle",
+      "description": "A celestial miracle unites the people across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 8,
+            "charity": 4
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 5
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 4,
+            "spread_rate": -4
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 29
+      },
+      "weight": 6,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0159",
+      "title": "The Ancient Prophecy",
+      "description": "A ancient prophecy tests the faithful. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 3
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "knowledge": 3
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 3,
+            "stability_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 11
+      },
+      "weight": 11,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0160",
+      "title": "The Celestial Vision",
+      "description": "A celestial vision unites the people across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 9,
+            "ritual": 5
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 6
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 2,
+            "tolerance": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 24
+      },
+      "weight": 7,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0161",
+      "title": "The Ancient Vision",
+      "description": "A ancient vision inspires the faithful across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 4,
+            "ritual": 8
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 6
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 3,
+            "spread_rate": -3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 9
+      },
+      "weight": 5,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0162",
+      "title": "The Ancient Storm",
+      "description": "A ancient storm tests the faithful. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 5
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "knowledge": 5
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 6,
+            "stability_all": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 14
+      },
+      "weight": 5,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0163",
+      "title": "The Ancient Dawn",
+      "description": "A ancient dawn challenges authority. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 6
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "knowledge": 7
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 3,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 27
+      },
+      "weight": 10,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0164",
+      "title": "The Eternal Vision",
+      "description": "A eternal vision inspires the faithful across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "legitimacy": 3,
+            "ritual": 2
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 5
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 2,
+            "tolerance": -4
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 32
+      },
+      "weight": 11,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0165",
+      "title": "The Sacred Revelation",
+      "description": "A sacred revelation causes doubt. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 5
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 10
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 5,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 24
+      },
+      "weight": 9,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0166",
+      "title": "The Hallowed Blessing",
+      "description": "A hallowed blessing brings hope across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 7,
+            "ritual": 5
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 4
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 4,
+            "tolerance": -3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 6
+      },
+      "weight": 9,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0167",
+      "title": "The Ancient Oracle",
+      "description": "A ancient oracle spreads joy across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "legitimacy": 7,
+            "charity": 5
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 3
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 2,
+            "tolerance": -3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 30
+      },
+      "weight": 5,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0168",
+      "title": "The Divine Vision",
+      "description": "A divine vision strengthens belief across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 6,
+            "knowledge": 3
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 5
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 5,
+            "spread_rate": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 33
+      },
+      "weight": 12,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0169",
+      "title": "The Divine Revelation",
+      "description": "A divine revelation spreads joy across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 4,
+            "knowledge": 7
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 8
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 4,
+            "spread_rate": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 35
+      },
+      "weight": 12,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0170",
+      "title": "The Celestial Judgment",
+      "description": "A celestial judgment causes doubt. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 4
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 7
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 3,
+            "stability_all": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 8
+      },
+      "weight": 8,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0171",
+      "title": "The Mystic Judgment",
+      "description": "A mystic judgment causes doubt. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 6
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 9
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 2,
+            "stability_all": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 28
+      },
+      "weight": 8,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0172",
+      "title": "The Celestial Omen",
+      "description": "A celestial omen challenges authority. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 6
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 8
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 5,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 1
+      },
+      "weight": 5,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0173",
+      "title": "The Hallowed Revelation",
+      "description": "A hallowed revelation brings hope across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 7,
+            "charity": 3
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 5
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 3,
+            "tolerance": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 37
+      },
+      "weight": 9,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0174",
+      "title": "The Celestial Vision",
+      "description": "A celestial vision strengthens belief across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 10,
+            "ritual": 4
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 3
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 2,
+            "spread_rate": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 34
+      },
+      "weight": 10,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0175",
+      "title": "The Divine Miracle",
+      "description": "A divine miracle brings hope across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 5,
+            "charity": 6
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 6
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 2,
+            "tolerance": -2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 30
+      },
+      "weight": 10,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0176",
+      "title": "The Divine Judgment",
+      "description": "A divine judgment strengthens belief across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 4,
+            "knowledge": 5
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 8
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 5,
+            "spread_rate": -4
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 17
+      },
+      "weight": 12,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0177",
+      "title": "The Ancient Dawn",
+      "description": "A ancient dawn strengthens belief across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 6,
+            "knowledge": 6
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 5
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 4,
+            "spread_rate": -3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 25
+      },
+      "weight": 10,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0178",
+      "title": "The Divine Oracle",
+      "description": "A divine oracle challenges authority. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 5
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "knowledge": 7
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 3,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 35
+      },
+      "weight": 9,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0179",
+      "title": "The Sacred Prophecy",
+      "description": "A sacred prophecy inspires the faithful across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 10,
+            "ritual": 7
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 5
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 3,
+            "tolerance": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 29
+      },
+      "weight": 10,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0180",
+      "title": "The Mystic Oracle",
+      "description": "A mystic oracle unites the people across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "legitimacy": 5,
+            "knowledge": 8
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 4
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 5,
+            "spread_rate": -4
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 13
+      },
+      "weight": 8,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0181",
+      "title": "The Eternal Dawn",
+      "description": "A eternal dawn spreads joy across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "legitimacy": 4,
+            "charity": 5
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 5
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 2,
+            "spread_rate": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 25
+      },
+      "weight": 6,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0182",
+      "title": "The Divine Revelation",
+      "description": "A divine revelation threatens stability. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 4
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 5
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 3,
+            "stability_all": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 21
+      },
+      "weight": 12,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0183",
+      "title": "The Blessed Dawn",
+      "description": "A blessed dawn inspires the faithful across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "legitimacy": 3,
+            "ritual": 3
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 7
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 2,
+            "tolerance": -4
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 12
+      },
+      "weight": 9,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0184",
+      "title": "The Sacred Revelation",
+      "description": "A sacred revelation divides opinion. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 5
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 3
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 2,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 20
+      },
+      "weight": 11,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0185",
+      "title": "The Divine Vision",
+      "description": "A divine vision spreads joy across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 10,
+            "charity": 8
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 5
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 3,
+            "tolerance": -3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 36
+      },
+      "weight": 12,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0186",
+      "title": "The Blessed Oracle",
+      "description": "A blessed oracle strengthens belief across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 4,
+            "charity": 8
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 3
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 5,
+            "tolerance": -2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 32
+      },
+      "weight": 10,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0187",
+      "title": "The Holy Dawn",
+      "description": "A holy dawn divides opinion. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 8
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 5
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 5,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 34
+      },
+      "weight": 6,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0188",
+      "title": "The Holy Miracle",
+      "description": "A holy miracle unites the people across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 9,
+            "charity": 8
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 8
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 5,
+            "spread_rate": -3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 5
+      },
+      "weight": 9,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0189",
+      "title": "The Blessed Oracle",
+      "description": "A blessed oracle threatens stability. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 3
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 10
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 4,
+            "stability_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 7
+      },
+      "weight": 7,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0190",
+      "title": "The Mystic Revelation",
+      "description": "A mystic revelation threatens stability. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 6
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 5
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 4,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 3
+      },
+      "weight": 6,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0191",
+      "title": "The Blessed Vision",
+      "description": "A blessed vision spreads joy across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 4,
+            "ritual": 3
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 7
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 2,
+            "tolerance": -2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 31
+      },
+      "weight": 9,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0192",
+      "title": "The Divine Dawn",
+      "description": "A divine dawn brings hope across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 6,
+            "charity": 8
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 4
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 5,
+            "tolerance": -4
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 13
+      },
+      "weight": 9,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0193",
+      "title": "The Sacred Revelation",
+      "description": "A sacred revelation causes doubt. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 6
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 7
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 2,
+            "stability_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 17
+      },
+      "weight": 6,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0194",
+      "title": "The Hallowed Revelation",
+      "description": "A hallowed revelation unites the people across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "legitimacy": 6,
+            "charity": 5
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 6
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 2,
+            "tolerance": -3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 24
+      },
+      "weight": 8,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0195",
+      "title": "The Eternal Dawn",
+      "description": "A eternal dawn challenges authority. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 7
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 10
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 6,
+            "stability_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 27
+      },
+      "weight": 6,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0196",
+      "title": "The Blessed Revelation",
+      "description": "A blessed revelation tests the faithful. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 8
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 5
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 3,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 12
+      },
+      "weight": 6,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0197",
+      "title": "The Divine Judgment",
+      "description": "A divine judgment strengthens belief across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 3,
+            "ritual": 8
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 6
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 5,
+            "tolerance": -4
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 33
+      },
+      "weight": 7,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0198",
+      "title": "The Holy Judgment",
+      "description": "A holy judgment strengthens belief across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "legitimacy": 8,
+            "knowledge": 3
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 6
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 2,
+            "tolerance": -2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 28
+      },
+      "weight": 8,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0199",
+      "title": "The Radiant Judgment",
+      "description": "A radiant judgment strengthens belief across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 9,
+            "charity": 7
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 3
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 2,
+            "tolerance": -3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 32
+      },
+      "weight": 5,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0200",
+      "title": "The Divine Dawn",
+      "description": "A divine dawn tests the faithful. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 7
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 6
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 5,
+            "stability_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 9
+      },
+      "weight": 5,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0201",
+      "title": "The Mystic Dawn",
+      "description": "A mystic dawn divides opinion. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 8
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "knowledge": 10
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 3,
+            "stability_all": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 35
+      },
+      "weight": 8,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0202",
+      "title": "The Blessed Blessing",
+      "description": "A blessed blessing divides opinion. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 8
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 4
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 2,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 8
+      },
+      "weight": 5,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0203",
+      "title": "The Ancient Storm",
+      "description": "A ancient storm challenges authority. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 4
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 5
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 5,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 4
+      },
+      "weight": 6,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0204",
+      "title": "The Eternal Miracle",
+      "description": "A eternal miracle brings hope across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "legitimacy": 4,
+            "charity": 6
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 7
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 2,
+            "spread_rate": -5
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 16
+      },
+      "weight": 7,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0205",
+      "title": "The Mystic Judgment",
+      "description": "A mystic judgment brings hope across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "legitimacy": 9,
+            "knowledge": 6
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 5
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 5,
+            "tolerance": -2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 33
+      },
+      "weight": 10,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0206",
+      "title": "The Divine Vision",
+      "description": "A divine vision causes doubt. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 8
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "knowledge": 3
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 3,
+            "stability_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 28
+      },
+      "weight": 9,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0207",
+      "title": "The Divine Storm",
+      "description": "A divine storm tests the faithful. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 4
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 7
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 3,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 32
+      },
+      "weight": 10,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0208",
+      "title": "The Celestial Judgment",
+      "description": "A celestial judgment inspires the faithful across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 7,
+            "charity": 8
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 7
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 4,
+            "tolerance": -2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 4
+      },
+      "weight": 5,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0209",
+      "title": "The Ancient Blessing",
+      "description": "A ancient blessing tests the faithful. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 3
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "knowledge": 7
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 4,
+            "stability_all": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 18
+      },
+      "weight": 5,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0210",
+      "title": "The Sacred Revelation",
+      "description": "A sacred revelation strengthens belief across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 3,
+            "charity": 6
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 3
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 2,
+            "spread_rate": -4
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 2
+      },
+      "weight": 12,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0211",
+      "title": "The Radiant Revelation",
+      "description": "A radiant revelation challenges authority. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 4
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 7
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 3,
+            "stability_all": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 24
+      },
+      "weight": 6,
+      "cooldown": 5
+    },
+    {
+      "id": "evt_0212",
+      "title": "The Celestial Blessing",
+      "description": "A celestial blessing tests the faithful. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 5
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "knowledge": 8
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 2,
+            "stability_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 9
+      },
+      "weight": 8,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0213",
+      "title": "The Eternal Judgment",
+      "description": "A eternal judgment spreads joy across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "authority": 8,
+            "knowledge": 6
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 4
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 3,
+            "spread_rate": -2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 36
+      },
+      "weight": 10,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0214",
+      "title": "The Mystic Storm",
+      "description": "A mystic storm strengthens belief across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "spread_rate": 10,
+            "ritual": 5
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "tolerance": 4
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "militarism": 4,
+            "tolerance": -2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 19
+      },
+      "weight": 7,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0215",
+      "title": "The Eternal Miracle",
+      "description": "A eternal miracle threatens stability. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 3
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "knowledge": 3
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 5,
+            "stability_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 37
+      },
+      "weight": 12,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0216",
+      "title": "The Blessed Vision",
+      "description": "A blessed vision tests the faithful. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 8
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 4
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 4,
+            "stability_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 22
+      },
+      "weight": 6,
+      "cooldown": 7
+    },
+    {
+      "id": "evt_0217",
+      "title": "The Blessed Vision",
+      "description": "A blessed vision tests the faithful. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "authority": 8
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "commerce": 5
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 5,
+            "stability_all": 2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 12
+      },
+      "weight": 9,
+      "cooldown": 8
+    },
+    {
+      "id": "evt_0218",
+      "title": "The Celestial Blessing",
+      "description": "A celestial blessing tests the faithful. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 4
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 8
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 3,
+            "stability_all": 3
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 15
+      },
+      "weight": 6,
+      "cooldown": 6
+    },
+    {
+      "id": "evt_0219",
+      "title": "The Sacred Judgment",
+      "description": "A sacred judgment unites the people across the land. Your response will shape the faith's future.",
+      "choices": [
+        {
+          "text": "Embrace it fully",
+          "effects": {
+            "legitimacy": 9,
+            "ritual": 2
+          }
+        },
+        {
+          "text": "Proceed with caution",
+          "effects": {
+            "knowledge": 6
+          }
+        },
+        {
+          "text": "Reject it",
+          "effects": {
+            "authority": 2,
+            "spread_rate": -2
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 27
+      },
+      "weight": 7,
+      "cooldown": 4
+    },
+    {
+      "id": "evt_0220",
+      "title": "The Ancient Oracle",
+      "description": "A ancient oracle threatens stability. The faithful look to you for guidance.",
+      "choices": [
+        {
+          "text": "Stand firm",
+          "effects": {
+            "militarism": 4
+          }
+        },
+        {
+          "text": "Adapt and overcome",
+          "effects": {
+            "tolerance": 8
+          }
+        },
+        {
+          "text": "Seek compromise",
+          "effects": {
+            "legitimacy": 3,
+            "stability_all": 1
+          }
+        }
+      ],
+      "conditions": {
+        "min_turn": 30
+      },
+      "weight": 10,
+      "cooldown": 5
+    }
+  ]
+}
