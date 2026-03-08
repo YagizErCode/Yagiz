@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <rect width="128" height="128" fill="#2a1a3a"/>
+  <circle cx="64" cy="50" r="30" fill="none" stroke="#c8a832" stroke-width="4"/>
+  <polygon points="64,20 70,45 95,45 75,60 82,85 64,70 46,85 53,60 33,45 58,45" fill="#c8a832"/>
+  <text x="64" y="115" font-family="Arial" font-size="14" fill="#c8a832" text-anchor="middle">FAITH</text>
+</svg>
