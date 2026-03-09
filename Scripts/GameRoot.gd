@@ -90,7 +90,7 @@ func _create_camera() -> void:
 	env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
 	env.ambient_light_color = Color(0.3, 0.3, 0.35)
 	env.ambient_light_energy = 0.5
-	env.tonemap_mode = Environment.TONE_MAP_ACES
+	env.tonemap_mode = Environment.TONE_MAP_FILMIC
 
 	var world_env := WorldEnvironment.new()
 	world_env.environment = env
@@ -436,12 +436,12 @@ func _generate_world() -> void:
 	world_generator.generate_world()
 
 	# Seed faith at birthplace
-	var birthplace := gs.player_religion.birthplace_city
+	var birthplace = gs.player_religion.birthplace_city
 	if birthplace >= 0 and birthplace in gs.cities:
 		religion_system.seed_faith_at_city(birthplace)
 	else:
 		# Pick first city
-		var first_id := gs.cities.keys()[0] if not gs.cities.is_empty() else -1
+		var first_id = gs.cities.keys()[0] if not gs.cities.is_empty() else -1
 		if first_id >= 0:
 			religion_system.seed_faith_at_city(first_id)
 			gs.player_religion.birthplace_city = first_id
@@ -449,7 +449,7 @@ func _generate_world() -> void:
 
 func _finalize() -> void:
 	# Center camera on birthplace
-	var bp := gs.player_religion.birthplace_city
+	var bp = gs.player_religion.birthplace_city
 	if bp >= 0 and bp in gs.cities:
 		camera.center_on(gs.cities[bp].pos)
 	else:

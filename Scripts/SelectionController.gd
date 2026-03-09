@@ -30,7 +30,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			_tap_start_pos = event.position
 			_tap_start_time = Time.get_ticks_msec() / 1000.0
 		else:
-			var dist := event.position.distance_to(_tap_start_pos)
+			var dist = event.position.distance_to(_tap_start_pos)
 			var elapsed := Time.get_ticks_msec() / 1000.0 - _tap_start_time
 			if dist < TAP_MAX_DIST and elapsed < TAP_MAX_TIME:
 				_do_raycast(event.position)

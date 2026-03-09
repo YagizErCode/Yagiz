@@ -92,7 +92,7 @@ func _process_siege(army: Dictionary) -> void:
 
 
 func _capture_city(army: Dictionary, city: Dictionary) -> void:
-	var old_kingdom := city.kingdom_id
+	var old_kingdom = city.kingdom_id
 	city.kingdom_id = army.kingdom_id
 	city.stability *= 0.5
 	city.security *= 0.3
@@ -123,7 +123,7 @@ func raise_army(city_id: int, size: int) -> int:
 	gs.player_religion.gold -= cost
 	city.population = maxi(100, city.population - size)
 
-	var army := gs.create_army(city_id, -1, size)  # -1 = player
+	var army = gs.create_army(city_id, -1, size)  # -1 = player
 	_create_army_marker(army)
 	gs.log_chronicle("Army of %d raised in %s" % [size, city.name])
 	return army.id
@@ -151,8 +151,9 @@ func remove_army(army_id: int) -> void:
 
 func _create_army_marker(army: Dictionary) -> void:
 	var marker := MeshInstance3D.new()
-	var mesh := ConeMesh.new()
-	mesh.radius = 0.4
+	var mesh := CylinderMesh.new()
+	mesh.top_radius = 0.0
+	mesh.bottom_radius = 0.4
 	mesh.height = 0.8
 	marker.mesh = mesh
 	var mat := StandardMaterial3D.new()

@@ -30,8 +30,8 @@ func generate_world() -> void:
 
 
 func _generate_heightmap() -> void:
-	var w := game_state.map_width
-	var h := game_state.map_height
+	var w = game_state.map_width
+	var h = game_state.map_height
 	game_state.heightmap.resize(w * h)
 	game_state.moisturemap.resize(w * h)
 	game_state.biomemap.resize(w * h)
@@ -56,8 +56,8 @@ func _generate_heightmap() -> void:
 			var val := (noise.get_noise_2d(nx, ny) + 1.0) * 0.5
 
 			# Island shaping: lower edges
-			var dx := (float(x) / w - 0.5) * 2.0
-			var dy := (float(y) / h - 0.5) * 2.0
+			var dx = (float(x) / w - 0.5) * 2.0
+			var dy = (float(y) / h - 0.5) * 2.0
 			var dist := sqrt(dx * dx + dy * dy)
 			val -= dist * 0.5
 			val = clampf(val, 0.0, 1.0)
@@ -69,13 +69,13 @@ func _generate_heightmap() -> void:
 
 
 func _assign_biomes() -> void:
-	var w := game_state.map_width
-	var h := game_state.map_height
+	var w = game_state.map_width
+	var h = game_state.map_height
 	for y in h:
 		for x in w:
-			var idx := y * w + x
-			var height := game_state.heightmap[idx]
-			var moisture := game_state.moisturemap[idx]
+			var idx = y * w + x
+			var height = game_state.heightmap[idx]
+			var moisture = game_state.moisturemap[idx]
 			var lat := absf(float(y) / h - 0.5) * 2.0  # 0=equator, 1=pole
 
 			var biome: int
@@ -102,31 +102,31 @@ func _assign_biomes() -> void:
 
 
 func _build_terrain_mesh() -> void:
-	var w := game_state.map_width
-	var h := game_state.map_height
+	var w = game_state.map_width
+	var h = game_state.map_height
 	var step := 2  # Skip every other vertex for performance
-	var cols := w / step
-	var rows := h / step
+	var cols = w / step
+	var rows = h / step
 
 	var surface := SurfaceTool.new()
 	surface.begin(Mesh.PRIMITIVE_TRIANGLES)
 
 	for gy in rows:
 		for gx in cols:
-			var x := gx * step
-			var y := gy * step
+			var x = gx * step
+			var y = gy * step
 			if x >= w - step or y >= h - step:
 				continue
 
-			var idx00 := y * w + x
-			var idx10 := y * w + (x + step)
-			var idx01 := (y + step) * w + x
-			var idx11 := (y + step) * w + (x + step)
+			var idx00 = y * w + x
+			var idx10 = y * w + (x + step)
+			var idx01 = (y + step) * w + x
+			var idx11 = (y + step) * w + (x + step)
 
-			var h00 := game_state.heightmap[idx00] * HEIGHT_SCALE
-			var h10 := game_state.heightmap[idx10] * HEIGHT_SCALE
-			var h01 := game_state.heightmap[idx01] * HEIGHT_SCALE
-			var h11 := game_state.heightmap[idx11] * HEIGHT_SCALE
+			var h00 = game_state.heightmap[idx00] * HEIGHT_SCALE
+			var h10 = game_state.heightmap[idx10] * HEIGHT_SCALE
+			var h01 = game_state.heightmap[idx01] * HEIGHT_SCALE
+			var h11 = game_state.heightmap[idx11] * HEIGHT_SCALE
 
 			var v00 := Vector3(x * CELL_SIZE, h00, y * CELL_SIZE)
 			var v10 := Vector3((x + step) * CELL_SIZE, h10, y * CELL_SIZE)
@@ -178,17 +178,17 @@ func _biome_color(biome: int, height: float) -> Color:
 
 
 func _place_cities() -> void:
-	var w := game_state.map_width
-	var h := game_state.map_height
+	var w = game_state.map_width
+	var h = game_state.map_height
 	var candidates: Array[Vector2i] = []
 
 	# Collect suitable positions
 	for y in range(0, h, 3):
 		for x in range(0, w, 3):
-			var biome := game_state.get_biome(x, y)
+			var biome = game_state.get_biome(x, y)
 			if biome == GameState.BIOME_OCEAN or biome == GameState.BIOME_MOUNTAIN:
 				continue
-			var hv := game_state.get_height(x, y)
+			var hv = game_state.get_height(x, y)
 			if hv < 0.25 or hv > 0.72:
 				continue
 			# Prefer near water
@@ -209,7 +209,7 @@ func _place_cities() -> void:
 	var placed: Array[Vector2i] = []
 	# Shuffle candidates
 	for i in range(candidates.size() - 1, 0, -1):
-		var j := game_state.rng.randi() % (i + 1)
+		var j = game_state.rng.randi() % (i + 1)
 		var tmp := candidates[i]
 		candidates[i] = candidates[j]
 		candidates[j] = tmp
@@ -227,11 +227,11 @@ func _place_cities() -> void:
 
 	# Create city data and markers
 	for p in placed:
-		var hv := game_state.get_height(p.x, p.y) * HEIGHT_SCALE
+		var hv = game_state.get_height(p.x, p.y) * HEIGHT_SCALE
 		var pos := Vector3(p.x * CELL_SIZE, hv + 0.3, p.y * CELL_SIZE)
-		var biome := game_state.get_biome(p.x, p.y)
-		var culture := biome % game_state.culture_names.size()
-		var city := game_state.create_city(pos, -1, culture)
+		var biome = game_state.get_biome(p.x, p.y)
+		var culture = biome % game_state.culture_names.size()
+		var city = game_state.create_city(pos, -1, culture)
 		_create_city_marker(city)
 
 
@@ -284,7 +284,7 @@ func _create_kingdoms() -> void:
 		"Duskhollow", "Ironbound League", "Thornlands", "Stormcall Dominion",
 		"Sandweavers", "Deepmoor Realm", "Flameguard", "Mossblood Confederacy"]
 	for i in NUM_KINGDOMS:
-		var k := game_state.create_kingdom(kingdom_names[i], i)
+		var k = game_state.create_kingdom(kingdom_names[i], i)
 		# Initialize relations
 		for j in NUM_KINGDOMS:
 			if j != i:
@@ -293,11 +293,11 @@ func _create_kingdoms() -> void:
 
 func _assign_cities_to_kingdoms() -> void:
 	# Pick capital cities spread across map, then flood-fill assign
-	var city_ids := game_state.cities.keys()
+	var city_ids = game_state.cities.keys()
 	if city_ids.is_empty():
 		return
 
-	var kingdom_ids := game_state.kingdoms.keys()
+	var kingdom_ids = game_state.kingdoms.keys()
 	var capitals: Dictionary = {}  # kingdom_id -> city_id
 
 	# Pick spread-out capitals
@@ -384,7 +384,7 @@ func update_city_marker(city_id: int) -> void:
 
 
 func _build_trade_network() -> void:
-	var city_ids := game_state.cities.keys()
+	var city_ids = game_state.cities.keys()
 	for cid in city_ids:
 		var city: Dictionary = game_state.cities[cid]
 		# Find nearest cities
@@ -397,7 +397,7 @@ func _build_trade_network() -> void:
 			dists.append({"id": other_id, "dist": d})
 		dists.sort_custom(func(a: Dictionary, b: Dictionary) -> bool: return a.dist < b.dist)
 
-		var num_links := game_state.rng.randi_range(2, 5)
+		var num_links = game_state.rng.randi_range(2, 5)
 		var links: Array = city.trade_links
 		for i in mini(num_links, dists.size()):
 			var target_id: int = dists[i].id
@@ -418,16 +418,16 @@ func _place_resource_markers() -> void:
 		"gold": Color(1.0, 0.85, 0.0),
 		"mana": Color(0.5, 0.2, 0.9),
 	}
-	var w := game_state.map_width
-	var h := game_state.map_height
+	var w = game_state.map_width
+	var h = game_state.map_height
 
 	for _i in 80:
-		var x := game_state.rng.randi_range(5, w - 5)
-		var y := game_state.rng.randi_range(5, h - 5)
-		var biome := game_state.get_biome(x, y)
+		var x = game_state.rng.randi_range(5, w - 5)
+		var y = game_state.rng.randi_range(5, h - 5)
+		var biome = game_state.get_biome(x, y)
 		if biome == GameState.BIOME_OCEAN:
 			continue
-		var hv := game_state.get_height(x, y)
+		var hv = game_state.get_height(x, y)
 		if hv < 0.22:
 			continue
 
@@ -449,7 +449,7 @@ func _place_resource_markers() -> void:
 
 func _create_characters() -> void:
 	for kid in game_state.kingdoms:
-		var ruler := game_state.create_character(kid, true)
+		var ruler = game_state.create_character(kid, true)
 		game_state.kingdoms[kid].ruler_id = ruler.id
 
 	# Player prophet

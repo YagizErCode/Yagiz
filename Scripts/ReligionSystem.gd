@@ -34,7 +34,7 @@ func spread_tick() -> void:
 			if link_id not in gs.cities:
 				continue
 			var target: Dictionary = gs.cities[link_id]
-			var spread_amount := base_rate * city.faith_share
+			var spread_amount = base_rate * city.faith_share
 
 			# Distance factor
 			var dist: float = city.pos.distance_to(target.pos)
@@ -48,7 +48,7 @@ func spread_tick() -> void:
 				spread_amount *= 1.3
 
 			# Resistance
-			var resistance := target.education * 0.003 + target.stability * 0.002 + target.security * 0.002
+			var resistance = target.education * 0.003 + target.stability * 0.002 + target.security * 0.002
 			if axes.get("tolerance", 50) > 60:
 				resistance *= 0.8
 			spread_amount = maxf(0.0, spread_amount - resistance * 0.01)
@@ -118,12 +118,12 @@ func _schism_check() -> void:
 
 
 func _create_sect(origin_city_id: int) -> void:
-	var sid := gs.next_sect_id
+	var sid = gs.next_sect_id
 	gs.next_sect_id += 1
 
 	var sect_prefixes := ["Reformed", "True", "Purified", "Ancient", "Radical",
 		"Mystic", "Ascendant", "Orthodox", "Heterodox", "Illuminated"]
-	var sect_name := sect_prefixes[sid % sect_prefixes.size()] + " " + gs.player_religion.name
+	var sect_name = sect_prefixes[sid % sect_prefixes.size()] + " " + gs.player_religion.name
 
 	# Modified axes
 	var new_axes: Dictionary = gs.player_religion.axes.duplicate()
@@ -209,7 +209,7 @@ func process_pilgrimages() -> void:
 			if city.faith_share < 0.3:
 				continue
 			# Pilgrimage generates gold and authority
-			var pilgrim_value := city.faith_share * city.population * 0.0001
+			var pilgrim_value = city.faith_share * city.population * 0.0001
 			gs.player_religion.gold += pilgrim_value
 			gs.player_religion.authority = minf(100.0, gs.player_religion.authority + pilgrim_value * 0.01)
 			# Boost spread along trade path

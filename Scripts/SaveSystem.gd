@@ -8,7 +8,7 @@ const SAVE_PATH := "user://faith_empire_save.json"
 
 
 func save_game() -> bool:
-	var data := gs.to_save_dict()
+	var data = gs.to_save_dict()
 	var json_str := JSON.stringify(data, "  ")
 	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if file == null:

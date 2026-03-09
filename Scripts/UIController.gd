@@ -162,7 +162,7 @@ func _populate_city_panel(city_id: int) -> void:
 				btn.text = "%s ($%d)" % [bname.capitalize(), bdata.cost]
 				btn.custom_minimum_size = Vector2(0, 50)
 				var captured_city_id := city_id
-				var captured_bname := bname
+				var captured_bname = bname
 				btn.pressed.connect(func() -> void:
 					if city_system and city_system.queue_building(captured_city_id, captured_bname):
 						_populate_city_panel(captured_city_id)
@@ -237,7 +237,7 @@ func _populate_army_panel(army_id: int) -> void:
 				if count >= 8:
 					break
 				var btn := Button.new()
-				var label := sc.name
+				var label = sc.name
 				if sc.kid != -1 and sc.kid in gs.kingdoms:
 					label += " (%s)" % gs.kingdoms[sc.kid].name
 				btn.text = "Move to %s" % label
@@ -343,7 +343,7 @@ func _populate_diplomacy_panel() -> void:
 		var nap_btn := Button.new()
 		nap_btn.text = "NAP"
 		nap_btn.custom_minimum_size = Vector2(70, 40)
-		var cap_kid := kid
+		var cap_kid = kid
 		nap_btn.pressed.connect(func() -> void:
 			if diplomacy_system:
 				diplomacy_system.propose_pact(cap_kid, "non_aggression")
@@ -354,7 +354,7 @@ func _populate_diplomacy_panel() -> void:
 		var trade_btn := Button.new()
 		trade_btn.text = "Trade"
 		trade_btn.custom_minimum_size = Vector2(70, 40)
-		var cap_kid2 := kid
+		var cap_kid2 = kid
 		trade_btn.pressed.connect(func() -> void:
 			if diplomacy_system:
 				diplomacy_system.propose_pact(cap_kid2, "trade")
@@ -366,7 +366,7 @@ func _populate_diplomacy_panel() -> void:
 			var hw_btn := Button.new()
 			hw_btn.text = "Holy War"
 			hw_btn.custom_minimum_size = Vector2(90, 40)
-			var cap_kid3 := kid
+			var cap_kid3 = kid
 			hw_btn.pressed.connect(func() -> void:
 				if diplomacy_system:
 					diplomacy_system.player_declare_holy_war(cap_kid3)

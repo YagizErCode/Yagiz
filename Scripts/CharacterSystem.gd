@@ -51,7 +51,7 @@ func _apply_character_influence(ch: Dictionary) -> void:
 
 
 func _random_character_event() -> void:
-	var ids := gs.characters.keys()
+	var ids = gs.characters.keys()
 	if ids.is_empty():
 		return
 	var ch_id: int = ids[gs.rng.randi() % ids.size()]
@@ -59,7 +59,7 @@ func _random_character_event() -> void:
 	if not ch.alive:
 		return
 
-	var roll := gs.rng.randf()
+	var roll = gs.rng.randf()
 	if roll < 0.02:
 		# Death
 		ch.alive = false
@@ -82,7 +82,7 @@ func _random_character_event() -> void:
 
 func _succession(kingdom_id: int) -> void:
 	# Create new ruler
-	var new_ruler := gs.create_character(kingdom_id, true)
+	var new_ruler = gs.create_character(kingdom_id, true)
 	gs.kingdoms[kingdom_id].ruler_id = new_ruler.id
 	gs.log_chronicle("%s of House %s ascends the throne of %s" % [
 		new_ruler.name, new_ruler.dynasty, gs.kingdoms[kingdom_id].name])

@@ -55,7 +55,7 @@ func _apply_building_effects(city: Dictionary, building_name: String) -> void:
 
 func _process_economy(city: Dictionary) -> void:
 	# Base income
-	var income := city.population * 0.002 + city.development * 0.1
+	var income = city.population * 0.002 + city.development * 0.1
 	# Trade income
 	income += city.trade_links.size() * 2.0
 	# Building bonuses
@@ -66,7 +66,7 @@ func _process_economy(city: Dictionary) -> void:
 
 	# Tax for player if dominated
 	if city.dominance > 0.5:
-		var tax := income * 0.05 * city.dominance
+		var tax = income * 0.05 * city.dominance
 		gs.player_religion.gold += tax
 
 

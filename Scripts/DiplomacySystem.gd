@@ -22,7 +22,7 @@ func _ai_diplomacy() -> void:
 	if gs.rng.randf() > 0.1:
 		return
 
-	var kingdom_ids := gs.kingdoms.keys()
+	var kingdom_ids = gs.kingdoms.keys()
 	if kingdom_ids.size() < 2:
 		return
 
@@ -85,9 +85,9 @@ func _process_wars() -> void:
 		var target_id: int = enemy_cities[gs.rng.randi() % enemy_cities.size()]
 
 		# Create AI army
-		var army_size := gs.rng.randi_range(200, int(source.population * 0.3))
+		var army_size = gs.rng.randi_range(200, int(source.population * 0.3))
 		source.population -= army_size
-		var army := gs.create_army(source_id, kid, army_size)
+		var army = gs.create_army(source_id, kid, army_size)
 		army.target_city = target_id
 		army.moving = true
 

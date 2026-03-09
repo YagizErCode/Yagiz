@@ -93,7 +93,7 @@ func event_tick() -> void:
 
 func _check_conditions(ev: Dictionary) -> bool:
 	var conditions = ev.get("conditions", {})
-	if conditions is not Dictionary:
+	if not conditions is Dictionary:
 		return true
 
 	if conditions.has("min_turn") and gs.turn < int(conditions["min_turn"]):
